@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useRef, useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 import Lox from "../Lox/Lox";
 import { GoArrowDownRight } from "react-icons/go";
 import gsap from "gsap";
 
-const Hero = () => {
+const Hero = ({ pageLoaded }) => {
     const heroRef = useRef(null);
+    const titleRef = useRef(null);
     const heroMediaRef = useRef(null); // Reference to hero_media div
-    const [isEnabled, setIsEnabled] = useState(false); // Prevent multiple animations
+    const [isAnimationEnabled, setIsAnimationEnabled] = useState(false); // State to track if animation can start
+
 
     const images = [
         'https://images.beta.cosmos.so/4cc66fe4-2176-4fd2-ae3c-d66136ac72f9?format=jpeg',
@@ -16,19 +19,20 @@ const Hero = () => {
         'https://images.beta.cosmos.so/0820d7b6-e8b3-49a4-a807-fe5fdaadfd2e?format=jpeg',
         'https://images.beta.cosmos.so/89e71a6e-f1b5-443b-becf-c1fc5c431df8?format=jpeg'
     ];
-
-    let count = 0; // Index for images
-
+    let count = 0
+    let isEnabled = false;
     // Create an image element at mouse position and animate it
     const createImage = (event) => {
-        const countIndex = (count = (count + 1) % images.length);
+        const countIndex = count % images.length; // Get the correct image index
+        count++;
+
         const image = document.createElement('img');
         image.classList.add(styles.heroMediaImage);
         image.setAttribute('src', images[countIndex]);
 
         heroMediaRef.current.appendChild(image);
 
-        image.style.top = `${event.pageY - image.getBoundingClientRect().height / 2}px`;
+        image.style.top = `${event.pageY - image.getBoundingClientRect().height / 4}px`;
         image.style.left = `${event.pageX - image.getBoundingClientRect().width / 2}px`;
 
         animateImage(image);
@@ -63,27 +67,67 @@ const Hero = () => {
             });
     };
 
+    // window.addEventListener('mousemove', (event) => {
+    //     if (!isEnabled) {
+    //         isEnabled = true
+    //         setTimeout(() => { isEnabled = false }, 160);
+    //         createImage(event);
+    //     }
+    // });
+    const handleMouseMove = (event) => {
+        if (!isAnimationEnabled) return; // Only animate if isAnimationEnabled is true
+
+        const rect = titleRef.current.getBoundingClientRect();
+        const isInsideHero =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+        if (isInsideHero && !isEnabled) {
+            isEnabled = true;
+            setTimeout(() => {
+                isEnabled = false;
+            }, 120);
+            createImage(event);
+        }
+    };
+
+    // Set up the event listener on mount and clean up on unmount
+    // useEffect(() => {
+    //     if (pageLoaded) {
+    //         window.addEventListener("mousemove", handleMouseMove);
+    //     }
+
+    //     return () => {
+    //         window.removeEventListener("mousemove", handleMouseMove);
+    //     };
+    // }, [pageLoaded]);
+
+    // Set up the event listener on mount, but delay activation by 20 seconds
     useEffect(() => {
-        // Event listener for mousemove to create images
-        const handleMouseMove = (event) => {
-            if (!isEnabled) {
-                setIsEnabled(true);
-                setTimeout(() => setIsEnabled(false), 160); // Reset after 160ms
-                createImage(event);
-            }
-        };
+        if (pageLoaded) {
+            // Set a timeout to enable mouse move listener after 20 seconds
+            const timer = setTimeout(() => {
+                setIsAnimationEnabled(true);
+            }, 8000); // 20 seconds
 
-        // Attach mousemove event to the window
-        window.addEventListener('mousemove', handleMouseMove);
+            return () => clearTimeout(timer); // Clean up the timeout on unmount
+        }
+    }, [pageLoaded]); // Only re-run when pageLoaded changes
 
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [isEnabled]);
+    // Add event listener for mouse move when animation is enabled
+    useEffect(() => {
+        if (isAnimationEnabled) {
+            window.addEventListener("mousemove", handleMouseMove);
 
+            return () => {
+                window.removeEventListener("mousemove", handleMouseMove);
+            };
+        }
+    }, [isAnimationEnabled]); // Re-run only when isAnimationEnabled changes
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className={styles.header}>
                 <header className={styles.hero} ref={heroRef}>
                     <div className={styles.nav}>
@@ -99,7 +143,10 @@ const Hero = () => {
                         <p data-title-first className={styles.heroTitle}>
                             LAIOTIX
                         </p>
-                        <p data-title-second className={styles.heroBound}>INBOUND</p>
+                        {/* Correctly assign the ref */}
+                        <p data-title-second ref={titleRef} className={styles.heroBound}>
+                            INBOUND
+                        </p>
                     </div>
 
                     <div className={styles.subcontainer}>
@@ -117,10 +164,10 @@ const Hero = () => {
                             <p className={styles.scrolltext}>Scroll</p>
                         </div>
                     </div>
+                    <div ref={heroMediaRef} className={styles.heroMedia}></div> {/* This will hold the images */}
                 </header>
                 <Lox />
             </div>
-            <div ref={heroMediaRef} className={styles.heroMedia}></div> {/* This will hold the images */}
         </div>
     );
 };

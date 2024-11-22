@@ -1,0 +1,36 @@
+.loader{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    z-index: 0;
+}
+.preload {
+    position: absolute;
+    transform: scaleY(1);
+    transform-origin: bottom;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111d13;
+    opacity: 1;
+}
+.text {
+    position: absolute;
+    color: #fef9ef;
+    transform: scaleY(1);
+}
+.page {
+    position: relative;
+    background-color: #0d1f11;
+    z-index: 10; /* Change this to 10 for it to be above the loader*/
+    transform: scaleY(1);
+    transform-origin: bottom center;
+    width: 100%;
+    color: #fef9ef;
+   
+    height: auto; /* Change this from 100vh to auto*/
+}

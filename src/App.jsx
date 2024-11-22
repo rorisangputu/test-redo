@@ -1,12 +1,12 @@
 import './App.css'
-import Hero from './components/Hero/Hero'
+import Loader from './components/Loader/Loader'
 
 function App() {
 
 
   return (
     <>
-      <Hero />
+      <Loader />
     </>
   )
 }
