@@ -1,0 +1,81 @@
+.Lox {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 15rem;
+    padding-top: 15rem;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+}
+
+.LoxText {
+    width: 90%;
+    font-size: 6.5rem;
+    padding: 1rem;
+    font-family: sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    color: white;
+    line-height: 69px;
+}
+
+.setTrend {
+    color: rgb(250, 111, 30);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 69px;
+}
+
+.results {
+    color: rgb(146, 167, 250);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 500;
+    background: #f4f4f4;
+    border-radius: 6rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: black;
+}
+
+.fearless {
+    color: rgb(130, 135, 6);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 69px;
+}
+
+.creativity {
+    color: rgb(117, 163, 144);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 69px;
+}
+.icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.textLine {
+    overflow: hidden;
+
+
+}
+
+.lineParent {
+    overflow: hidden; /* Ensures the line container doesn't show overflow */
+}
+
+.lineChildren {
+    transform: translateY(100px); /*Start 100px below the normal position*/
+    opacity: 0; /* Make the text invisible at first */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth transition for transform and opacity*/
+}
