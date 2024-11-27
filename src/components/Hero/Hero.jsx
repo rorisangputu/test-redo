@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Work from "../Work/Work";
 import Footer from "../Footer/Footer";
 
+
 const Hero = ({ pageLoaded }) => {
     const heroRef = useRef(null);
     const titleRef = useRef(null);
@@ -15,11 +16,16 @@ const Hero = ({ pageLoaded }) => {
 
 
     const images = [
-        'https://images.beta.cosmos.so/4cc66fe4-2176-4fd2-ae3c-d66136ac72f9?format=jpeg',
-        'https://images.beta.cosmos.so/0d579453-3393-4d40-92d0-7227da80b19c?format=jpeg',
-        'https://images.beta.cosmos.so/c96bd3af-609e-4a4d-9ef8-059267837c64?format=jpeg',
-        'https://images.beta.cosmos.so/0820d7b6-e8b3-49a4-a807-fe5fdaadfd2e?format=jpeg',
-        'https://images.beta.cosmos.so/89e71a6e-f1b5-443b-becf-c1fc5c431df8?format=jpeg'
+        '/ImageHover1.png',
+        '/ImageHover2.png',
+        '/ImageHover3.png',
+        '/ImageHover4.png',
+        '/ImageHover5.png',
+        '/ImageHover6.png',
+        '/ImageHover7.png',
+        '/ImageHover8.png',
+        '/ImageHover9.png',
+        '/ImageHover10.png'
     ];
     let count = 0
     let isEnabled = false;
@@ -34,8 +40,8 @@ const Hero = ({ pageLoaded }) => {
 
         heroMediaRef.current.appendChild(image);
 
-        image.style.top = `${event.pageY - image.getBoundingClientRect().height / 4}px`;
-        image.style.left = `${event.pageX - image.getBoundingClientRect().width / 2}px`;
+        image.style.top = `${event.pageY - image.getBoundingClientRect().height / 2}px`;
+        image.style.left = `${event.pageX - image.getBoundingClientRect().width / 1}px`;
 
         animateImage(image);
     };

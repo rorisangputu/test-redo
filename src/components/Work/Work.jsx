@@ -2,7 +2,9 @@ import gsap from 'gsap';
 import styles from './Work.module.css';
 import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import work1 from "../../assets/Work1.png";
+import work2 from "../../assets/Work2.png";
+import work3 from "../../assets/Work3.png";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -12,25 +14,29 @@ const Work = () => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: `.${styles.workImages}`, // Trigger when `.workImages` comes into view
-                start: "top center",
+                start: "top 40%",
                 end: "bottom 110%",
                 scrub: true, // Smooth animation on scroll
+
             },
         })
             .to(`.${styles.imageOne}`, {
                 x: '-150%', // Move to the left
-                y: '35%', // Align vertically
+                y: '38%', // Align vertically
                 rotate: 0, // Reset rotation
+                ease: "expo.out"
             })
             .to(`.${styles.imageTwo}`, {
                 x: '50%', // Center horizontally
                 y: '-23.5%', // Align vertically
                 rotate: 0, // Reset rotation
+                ease: "expo.out"
             }, "<") // Align this animation with the previous one
             .to(`.${styles.imageThree}`, {
                 x: '50%', // Move to the right
                 y: '-7%', // Align vertically
                 rotate: 0, // Reset rotation
+                ease: "expo.out"
             }, "<"); // Align this animation with the previous ones
     }, []);
 
@@ -49,15 +55,15 @@ const Work = () => {
             <div className={styles.workImages}>
                 <div className={styles.imageCollage}>
                     <div className={`${styles.imageContainer} ${styles.imageOne}`}>
-                        <img src="https://images.unsplash.com/photo-1523023792609-a55619639b1a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        <img src={work3}
                             alt="Design 1" />
                     </div>
                     <div className={`${styles.imageContainer} ${styles.imageTwo}`}>
-                        <img src="https://images.unsplash.com/photo-1694878981750-3b1f8d97abff?q=80&w=1722&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        <img src={work2}
                             alt="Design 2" />
                     </div>
                     <div className={`${styles.imageContainer} ${styles.imageThree}`}>
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1858&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        <img src={work1}
                             alt="Design 3" />
                     </div>
                 </div>
