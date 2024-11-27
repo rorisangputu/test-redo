@@ -15,7 +15,7 @@ const Lox = () => {
                     variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
                     At Laiotix, we don&apos;t just follow trends —{" "}
                     <span className={styles.setTrend}>we set them.</span>
@@ -24,7 +24,7 @@ const Lox = () => {
                     variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
                     <img
                         style={{
@@ -45,7 +45,7 @@ const Lox = () => {
                     variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}>
+                    viewport={{ once: true }}>
                     are dedicated to delivering{" "}
                     <span className={styles.results}>exceptional results</span>
                     {" "} through a{" "}
@@ -53,7 +53,7 @@ const Lox = () => {
                 <motion.p variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
 
                     <span className={styles.fearless}>fearless approach</span> {" "}
@@ -79,7 +79,7 @@ const Lox = () => {
                 <motion.p variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
                     Whether you&apos;re looking to enhance your brand, create
                 </motion.p>
@@ -87,7 +87,7 @@ const Lox = () => {
                     variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
                     dynamic content, or build interactive experiences,
                 </motion.p>
@@ -95,7 +95,7 @@ const Lox = () => {
                     variants={SlideUp(0.3)}
                     initial="initial"
                     whileInView={"animate"}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className={styles.textLine} >
                     we bring your{" "}
                     <span className={styles.setTrend}>

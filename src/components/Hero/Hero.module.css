@@ -137,6 +137,7 @@
     color: rgb(146, 167, 250);
     font-weight: 500;
     font-family: 'EB Garamond', serif;
+    
 }
 
 .subtext {
@@ -145,7 +146,7 @@
     
     font-style: italic;
     width: 35vw;
-    letter-spacing: -6px;
+    letter-spacing: -7px;
 }
 
 .subtextBlock {
