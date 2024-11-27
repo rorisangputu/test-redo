@@ -1,10 +1,10 @@
 .header {
-    height: 200vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #0d1f11;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .hero {

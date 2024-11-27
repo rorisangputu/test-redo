@@ -3,21 +3,23 @@
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 15rem;
-    padding-top: 15rem;
+    padding-top: 30rem;
     /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
+    margin-bottom: 15rem;
 }
 
 .LoxText {
     width: 90%;
-    font-size: 6.5rem;
+    font-size: 5.5rem;
     padding: 1rem;
     font-family: sans-serif;
     font-weight: 300;
     overflow: hidden;
     color: white;
     line-height: 69px;
+    line-height: 6.5rem;
 }
 
 .setTrend {
