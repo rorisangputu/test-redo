@@ -1,8 +1,41 @@
+import gsap from 'gsap';
 import styles from './Work.module.css';
 import { GoArrowRight } from "react-icons/go";
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Work = () => {
+
+    useEffect(() => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: `.${styles.workImages}`, // Trigger when `.workImages` comes into view
+                start: "top center",
+                end: "bottom 100%",
+                scrub: true, // Smooth animation on scroll
+            },
+        })
+            .to(`.${styles.imageOne}`, {
+                x: '-150%', // Move to the left
+                y: '35%', // Align vertically
+                rotate: 0, // Reset rotation
+            })
+            .to(`.${styles.imageTwo}`, {
+                x: '50%', // Center horizontally
+                y: '-23.5%', // Align vertically
+                rotate: 0, // Reset rotation
+            }, "<") // Align this animation with the previous one
+            .to(`.${styles.imageThree}`, {
+                x: '50%', // Move to the right
+                y: '-7%', // Align vertically
+                rotate: 0, // Reset rotation
+            }, "<"); // Align this animation with the previous ones
+    }, []);
+
+
     return (
         <div className={styles.workContainer}>
             <div className={styles.workTextContainer}>

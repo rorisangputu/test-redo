@@ -1,5 +1,7 @@
+.wrapper{
+    height: auto;
+}
 .header {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
