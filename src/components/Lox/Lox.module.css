@@ -24,7 +24,7 @@
 
 .setTrend {
     color: rgb(250, 111, 30);
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
     font-size: 69px;
@@ -32,34 +32,32 @@
 
 .results {
     color: rgb(146, 167, 250);
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 5.5rem;
     font-weight: 500;
-    background: #f4f4f4;
-    border-radius: 6rem;
-    padding-top: 4px;
+    padding-top: 1px;
     padding-bottom: 4px;
     padding-left: 25px;
     padding-right: 25px;
-    color: black;
+    
 }
 
 .fearless {
     color: rgb(130, 135, 6);
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 69px;
+    font-size: 5.5rem;
 }
 
 .creativity {
     color: rgb(117, 163, 144);
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 69px;
-}
+    font-size: 5.5rem;
+    }
 .icons {
     display: inline-flex;
     align-items: center;

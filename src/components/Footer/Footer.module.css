@@ -1,0 +1,76 @@
+.footerContainer{
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    height: 45vh;
+}
+.textContainer{
+    /* border: 1px solid yellow; */
+    width: 90%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upperText{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.contacts{
+    display: flex;
+    gap: 15px;
+    font-size: 4rem;
+    
+}
+
+.lowerText{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 0;
+    /* border: red solid 2px; */
+    width: 100%;
+    
+}
+.footerText{
+    font-size: 25rem;
+    margin-left: -2rem;
+    margin-bottom: -1rem;
+}
+
+
+.lowerFooterText{
+    display: flex;
+    font-size: 2rem;
+    margin-bottom: 3%;
+    gap:2rem;
+    align-items: end;
+    font-weight: 300;
+}
+.backToTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+}
+.topArrow{
+    height: 3rem;
+    width: 3rem;
+}
+.copyright{
+    display: flex;
+    gap: 8px;
+}
+
+.copycopy{
+    font-weight: 700;
+}

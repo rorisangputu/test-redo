@@ -121,12 +121,13 @@
     font-size: 7rem;
     color: rgb(146, 167, 250);
     font-weight: 500;
+    font-family: 'EB Garamond', serif;
 }
 
 .subtext {
-    margin-top: 2rem;
-    margin-left: 1rem;
-    font-family: "Georgia", "Times New Roman", serif;
+    margin-top: 1rem;
+    /* margin-left: 1rem; */
+    
     font-style: italic;
     width: 35vw;
     letter-spacing: -0.5rem;
