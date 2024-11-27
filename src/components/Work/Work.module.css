@@ -39,8 +39,9 @@
     /* Adjust spacing between text and line below */
 }
 
-.workArrow {
-    margin-right: 5px;
+i {
+    margin-right: 50px;
+    margin-top: 60px;
     /* Adds space between the arrow and the text */
     font-size: 20rem;
     /* Adjust as needed */

@@ -5,6 +5,7 @@ import Lox from "../Lox/Lox";
 import { GoArrowDownRight } from "react-icons/go";
 import gsap from "gsap";
 import Work from "../Work/Work";
+import Footer from "../Footer/Footer";
 
 const Hero = ({ pageLoaded }) => {
     const heroRef = useRef(null);
@@ -170,6 +171,7 @@ const Hero = ({ pageLoaded }) => {
                 <Lox />
             </div>
             <Work />
+            <Footer />
         </div>
     );
 };

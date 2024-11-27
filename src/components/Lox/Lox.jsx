@@ -1,7 +1,6 @@
 import styles from "./Lox.module.css";
-import dwp from "../../assets/dwp.webp";
-import frank from "../../assets/frank.png";
-import urkel from "../../assets/urkel.jpeg";
+import dwp from "../../assets/Lox2.png";
+import urkel from "../../assets/Lox1.png";
 import { motion } from 'framer-motion'
 import { SlideUp } from "../../Utils/framer";
 
@@ -29,8 +28,8 @@ const Lox = () => {
                     className={styles.textLine} >
                     <img
                         style={{
-                            height: "70px",
-                            width: "250px",
+                            height: "80px",
+                            width: "300px",
                             objectFit: "cover",
                             objectPosition: "top",
                             display: "inline-flex",
@@ -60,10 +59,10 @@ const Lox = () => {
                     <span className={styles.fearless}>fearless approach</span> {" "}
                     <img
                         style={{
-                            height: "70px",
-                            width: "250px",
+                            height: "80px",
+                            width: "300px",
                             objectFit: "cover",
-                            objectPosition: "top",
+                            objectPosition: "center",
                             display: "inline-flex",
                             verticalAlign: "middle",
                             borderRadius: "50px",
@@ -82,7 +81,7 @@ const Lox = () => {
                     whileInView={"animate"}
                     viewport={{ once: false }}
                     className={styles.textLine} >
-                    Whether you&apos;re looking to enhance your brand,
+                    Whether you&apos;re looking to enhance your brand, create
                 </motion.p>
                 <motion.p
                     variants={SlideUp(0.3)}
@@ -90,7 +89,7 @@ const Lox = () => {
                     whileInView={"animate"}
                     viewport={{ once: false }}
                     className={styles.textLine} >
-                    create dynamic content, or build interactive
+                    dynamic content, or build interactive experiences,
                 </motion.p>
                 <motion.p
                     variants={SlideUp(0.3)}
@@ -98,33 +97,13 @@ const Lox = () => {
                     whileInView={"animate"}
                     viewport={{ once: false }}
                     className={styles.textLine} >
-                    experiences, we bring your{" "}
+                    we bring your{" "}
                     <span className={styles.setTrend}>
                         vision to life {" "}
-                        <img
-                            style={{
-                                height: "50px",
-                                width: "50px",
-                                objectFit: "cover",
-                                objectPosition: "top",
-                                display: "inline-flex",
-                                verticalAlign: "middle",
-                                borderRadius: "50px",
-                            }}
-                            alt="image"
-                            src={frank}
-                        />
                     </span>{" "}
-                    with{" "}
+                    with <span className={styles.results}>precision</span> and flair.
                 </motion.p>
-                <motion.p
-                    variants={SlideUp(0.3)}
-                    initial="initial"
-                    whileInView={"animate"}
-                    viewport={{ once: false }}
-                    className={styles.textLine} >
-                    <span className={styles.results}>precision</span> and flair.
-                </motion.p>
+
             </div>
         </div>
     );

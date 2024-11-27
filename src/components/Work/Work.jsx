@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import styles from './Work.module.css';
-import { GoArrowRight } from "react-icons/go";
 import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,7 +13,7 @@ const Work = () => {
             scrollTrigger: {
                 trigger: `.${styles.workImages}`, // Trigger when `.workImages` comes into view
                 start: "top center",
-                end: "bottom 100%",
+                end: "bottom 110%",
                 scrub: true, // Smooth animation on scroll
             },
         })
@@ -42,7 +41,7 @@ const Work = () => {
                 <div className={styles.workText}>
                     <h1>Want to see</h1>
                     <div className={styles.workLineTwo}>
-                        <GoArrowRight className={styles.workArrow} />
+                        <i className="las la-long-arrow-alt-right" ></i>
                         <h1>our <span className={styles.cursiveWork}>work?</span></h1>
                     </div>
                 </div>
