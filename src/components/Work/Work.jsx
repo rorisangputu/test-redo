@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import work1 from "../../assets/Work1.png";
 import work2 from "../../assets/Work2.png";
 import work3 from "../../assets/Work3.png";
+import { motion } from 'framer-motion';
+import { SlideUp } from '../../Utils/framer';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -19,6 +22,7 @@ const Work = () => {
                 scrub: true, // Smooth animation on scroll
 
             },
+
         })
             .to(`.${styles.imageOne}`, {
                 x: '-150%', // Move to the left
@@ -38,6 +42,23 @@ const Work = () => {
                 rotate: 0, // Reset rotation
                 ease: "expo.out"
             }, "<"); // Align this animation with the previous ones
+
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: `.${styles.workTextContainer}`,
+        //         start: "top 40%",
+        //         end: "bottom 200%",
+
+        //         markers: true,
+        //     },
+        // })
+        //     .fromTo(
+        //         `.${styles.workText} h1`,
+        //         { opacity: 0, y: 100 },
+        //         { opacity: 1, y: 0, ease: "power3.inOut", duration: 0.6 }
+        //     );
+
+
     }, []);
 
 
@@ -45,11 +66,21 @@ const Work = () => {
         <div className={styles.workContainer}>
             <div className={styles.workTextContainer}>
                 <div className={styles.workText}>
-                    <h1>Want to see</h1>
-                    <div className={styles.workLineTwo}>
+                    <motion.h1
+                        variants={SlideUp(0.3)}
+                        initial="initial"
+                        whileInView={"animate"}
+                        viewport={{ once: true }}
+                    >Want to see</motion.h1>
+                    <motion.div
+                        variants={SlideUp(0.4)}
+                        initial="initial"
+                        whileInView={"animate"}
+                        viewport={{ once: true }}
+                        className={styles.workLineTwo}>
                         <i className="las la-long-arrow-alt-right" ></i>
                         <h1>our <span className={styles.cursiveWork}>work?</span></h1>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className={styles.workImages}>
