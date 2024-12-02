@@ -54,9 +54,7 @@
     flex-direction: row;
     /* border: 2px solid green; */
 }
-.title {
-    overflow: hidden;
-}
+
 
 .heroTitle,
 .heroBound {
@@ -102,6 +100,165 @@
     height: 100%;
     /* border: 2px solid red */
     
+}
+.hoverImages {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid blue; */
+}
+
+.imageContainers {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+    z-index: 3;
+    /* All images hidden initially */
+    transition: opacity 0.1s ease, transform 0.1s ease-in-out;
+    /* Smooth transition */
+    /* border: 2px solid red; */
+    
+}
+.imageContainers img{
+    /* border: solid blue 2px; */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* When you hover over a specific image container, only that image appears */
+.imageContainers:hover {
+    opacity: 1;
+    /* transform: scale(1.05); */
+   
+}
+
+/* Original Image Styles */
+.firstImg {
+    top: 0;
+    transform: rotate(-5deg);
+}
+
+.sndImg {
+    left: 25%;
+    bottom: -5%;
+    transform: rotate(3deg);
+}
+
+.thirdImg {
+    left: 38%;
+    transform: rotate(-7deg);
+}
+
+.fourthImg {
+    right: 28%;
+    bottom: -3%;
+    transform: rotate(2deg);
+}
+
+.fifthImg {
+    bottom: -23%;
+    right: 1%;
+    transform: rotate(-4deg);
+}
+
+/* New Image Styles */
+.sixthImg {
+    left: 10%;
+    top: 20%;
+    transform: rotate(10deg);
+}
+
+.seventhImg {
+    right: 10%;
+    top: 25%;
+    transform: rotate(-10deg);
+}
+
+.eighthImg {
+    bottom: -14%;
+    left: 5%;
+    transform: rotate(5deg);
+}
+
+.ninthImg {
+    top: 10%;
+    left: 50%;
+    transform: rotate(-6deg);
+}
+
+.tenthImg {
+    bottom: -18%;
+    right: 15%;
+    transform: rotate(8deg);
+}
+
+.eleventhImg {
+    top: -5%;
+    left: 26%;
+    transform: rotate(-9deg);
+}
+
+.twelfthImg {
+    top: -8%;
+    right: 3%;
+    transform: rotate(4deg);
+}
+
+/* Additional Images */
+.thirteenthImg {
+    top: 30%;
+    left: -4%;
+    transform: rotate(-3deg);
+}
+
+.fourteenthImg {
+    bottom: 10%;
+    left: 35%;
+    transform: rotate(2deg);
+}
+
+.fifteenthImg {
+    top: 57%;
+    left: 47%;
+    transform: rotate(-6deg);
+}
+
+.sixteenthImg {
+    bottom: 40%;
+    right: 20%;
+    transform: rotate(7deg);
+}
+
+.seventeenthImg {
+    bottom: 55%;
+    right: 29%;
+    transform: rotate(-5deg);
+}
+
+.eighteenthImg {
+    bottom: 19%;
+    right: -2%;
+    transform: rotate(3deg);
+}
+
+.nineteenthImg {
+    bottom: -25%;
+    left: 15%;
+    transform: rotate(-8deg);
+}
+
+.twentiethImg {
+    bottom: 31%;
+    left: 17%;
+    transform: rotate(6deg);
+}
+
+/* Optional: Hover effect for images when hovered */
+.imageContainers:hover {
+    /* transform: scale(1.05); */
+    opacity: 1;
 }
 
 .heroMedia {

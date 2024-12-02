@@ -1,139 +1,27 @@
 /* eslint-disable react/prop-types */
-import { useRef, useEffect, useState } from "react";
+
 import styles from "./Hero.module.css";
 import Lox from "../Lox/Lox";
 import { GoArrowDownRight } from "react-icons/go";
-import gsap from "gsap";
+
 import Work from "../Work/Work";
 import Footer from "../Footer/Footer";
+import { useRef } from "react";
+import img1 from '../../assets/ImageHover1.png'
+import img2 from '../../assets/ImageHover2.png'
+import img3 from '../../assets/ImageHover3.png'
+import img4 from '../../assets/ImageHover4.png'
+import img5 from '../../assets/ImageHover5.png'
+import img6 from '../../assets/ImageHover6.png'
+import img7 from '../../assets/ImageHover7.png'
+import img8 from '../../assets/ImageHover8.png'
+import img9 from '../../assets/ImageHover9.png'
+import img10 from '../../assets/ImageHover10.png'
 
 
-const Hero = ({ pageLoaded }) => {
+const Hero = () => {
     const heroRef = useRef(null);
-    const titleRef = useRef(null);
-    const heroMediaRef = useRef(null); // Reference to hero_media div
-    const [isAnimationEnabled, setIsAnimationEnabled] = useState(false); // State to track if animation can start
 
-
-    const images = [
-        '/ImageHover1.png',
-        '/ImageHover2.png',
-        '/ImageHover3.png',
-        '/ImageHover4.png',
-        '/ImageHover5.png',
-        '/ImageHover6.png',
-        '/ImageHover7.png',
-        '/ImageHover8.png',
-        '/ImageHover9.png',
-        '/ImageHover10.png'
-    ];
-    let count = 0
-    let isEnabled = false;
-    // Create an image element at mouse position and animate it
-    const createImage = (event) => {
-        const countIndex = count % images.length; // Get the correct image index
-        count++;
-
-        const image = document.createElement('img');
-        image.classList.add(styles.heroMediaImage);
-        image.setAttribute('src', images[countIndex]);
-
-        heroMediaRef.current.appendChild(image);
-
-        image.style.top = `${event.pageY - image.getBoundingClientRect().height / 2}px`;
-        image.style.left = `${event.pageX - image.getBoundingClientRect().width / 1}px`;
-
-        animateImage(image);
-    };
-
-    // Helper function to generate a random value for rotation
-    const randomValue = (value) => Math.floor(Math.random() * value);
-
-    // Animate the image using GSAP
-    const animateImage = (image) => {
-        gsap.set(image, {
-            autoAlpha: 1,
-            yPercent: 100,
-            rotate: 0,
-        });
-
-        gsap.timeline()
-            .to(image, {
-                duration: 1.2,
-                yPercent: 0,
-                rotate: randomValue(-10),
-                ease: 'expo.out',
-            })
-            .to(image, {
-                duration: 2,
-                autoAlpha: 0,
-                yPercent: 100,
-                ease: 'expo.inOut',
-                onComplete: () => {
-                    heroMediaRef.current.removeChild(image);
-                },
-            });
-    };
-
-    // window.addEventListener('mousemove', (event) => {
-    //     if (!isEnabled) {
-    //         isEnabled = true
-    //         setTimeout(() => { isEnabled = false }, 160);
-    //         createImage(event);
-    //     }
-    // });
-    const handleMouseMove = (event) => {
-        if (!isAnimationEnabled) return; // Only animate if isAnimationEnabled is true
-
-        const rect = titleRef.current.getBoundingClientRect();
-        const isInsideHero =
-            event.clientX >= rect.left &&
-            event.clientX <= rect.right &&
-            event.clientY >= rect.top &&
-            event.clientY <= rect.bottom;
-
-        if (isInsideHero && !isEnabled) {
-            isEnabled = true;
-            setTimeout(() => {
-                isEnabled = false;
-            }, 120);
-            createImage(event);
-        }
-    };
-
-    // Set up the event listener on mount and clean up on unmount
-    // useEffect(() => {
-    //     if (pageLoaded) {
-    //         window.addEventListener("mousemove", handleMouseMove);
-    //     }
-
-    //     return () => {
-    //         window.removeEventListener("mousemove", handleMouseMove);
-    //     };
-    // }, [pageLoaded]);
-
-    // Set up the event listener on mount, but delay activation by 20 seconds
-    useEffect(() => {
-        if (pageLoaded) {
-            // Set a timeout to enable mouse move listener after 20 seconds
-            const timer = setTimeout(() => {
-                setIsAnimationEnabled(true);
-            }, 8000); // 20 seconds
-
-            return () => clearTimeout(timer); // Clean up the timeout on unmount
-        }
-    }, [pageLoaded]); // Only re-run when pageLoaded changes
-
-    // Add event listener for mouse move when animation is enabled
-    useEffect(() => {
-        if (isAnimationEnabled) {
-            window.addEventListener("mousemove", handleMouseMove);
-
-            return () => {
-                window.removeEventListener("mousemove", handleMouseMove);
-            };
-        }
-    }, [isAnimationEnabled]); // Re-run only when isAnimationEnabled changes
     return (
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -151,10 +39,17 @@ const Hero = ({ pageLoaded }) => {
                         <p data-title-first className={styles.heroTitle}>
                             LAIOTIX
                         </p>
-                        {/* Correctly assign the ref */}
-                        <p data-title-second ref={titleRef} className={styles.heroBound}>
-                            INBOUND
-                        </p>
+                        <div className={styles.hoverDiv}>
+                            <p data-title-second className={styles.heroBound}>INBOUND</p>
+                            <div className={styles.hoverImages}>
+                                {imageLinks.map((image, index) => (
+                                    <div key={index} className={`${styles.imageContainers} ${styles[image.style]}`}>
+                                        <img src={image.src} alt={`Image ${index + 1}`} />
+                                    </div>
+
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.subcontainer}>
@@ -172,7 +67,7 @@ const Hero = ({ pageLoaded }) => {
                             <p className={styles.scrolltext}>Scroll</p>
                         </div>
                     </div>
-                    <div ref={heroMediaRef} className={styles.heroMedia}></div> {/* This will hold the images */}
+                    {/* <div ref={heroMediaRef} className={styles.heroMedia}></div> This will hold the images */}
                 </header>
                 <Lox />
             </div>
@@ -183,3 +78,27 @@ const Hero = ({ pageLoaded }) => {
 };
 
 export default Hero;
+
+
+const imageLinks = [
+    { src: img1, style: "firstImg" },
+    { src: img2, style: "sndImg" },
+    { src: img3, style: "thirdImg" },
+    { src: img4, style: "fourthImg" },
+    { src: img5, style: "fifthImg" },
+    { src: img6, style: "sixthImg" },
+    { src: img7, style: "seventhImg" },
+    { src: img8, style: "eighthImg" },
+    { src: img9, style: "ninthImg" },
+    { src: img10, style: "tenthImg" },
+    { src: img1, style: "eleventhImg" },
+    { src: img2, style: "twelfthImg" },
+    { src: img3, style: "thirteenthImg" },
+    { src: img4, style: "fourteenthImg" },
+    { src: img5, style: "fifteenthImg" },
+    { src: img6, style: "sixteenthImg" },
+    { src: img7, style: "seventeenthImg" },
+    { src: img8, style: "eighteenthImg" },
+    { src: img9, style: "nineteenthImg" },
+    { src: img10, style: "twentiethImg" },
+];
