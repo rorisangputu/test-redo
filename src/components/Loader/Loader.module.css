@@ -22,6 +22,11 @@
     position: absolute;
     color: #fef9ef;
     transform: scaleY(1);
+    display: flex;
+        font-size: 7rem;
+        color: rgb(146, 167, 250);
+        font-weight: 500;
+        font-family: 'EB Garamond', serif;
 }
 .page {
     position: relative;

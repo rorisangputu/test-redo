@@ -13,11 +13,11 @@ export const animatePreload = () => {
     "[data-preload-title]",
     {
       y: 0,
-      duration: 5,
+      // duration: 20,
     },
     {
       y: 50,
-      duration: 0.5,
+      duration: 2,
     }
   );
 
@@ -31,7 +31,7 @@ export const animatePreload = () => {
     },
     {
       autoAlpha: 0,
-      duration: 1,
+      duration: 0.5,
     },
     "<"
   );
@@ -42,7 +42,7 @@ export const animatePage = () => {
   const tl = gsap.timeline({
     defaults: {
       ease: "power3.inOut",
-      duration: 2,
+      duration: 3,
     },
   });
 

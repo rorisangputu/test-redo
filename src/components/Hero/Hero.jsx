@@ -27,7 +27,7 @@ const Hero = () => {
         // Delay the visibility of hover images
         const timer = setTimeout(() => {
             setShowImages(true);
-        }, 8000); // Adjust the time based on your animation duration (in ms)
+        }, 10000); // Adjust the time based on your animation duration (in ms)
 
         return () => clearTimeout(timer); // Clean up the timer
     }, []);
