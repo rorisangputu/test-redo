@@ -1,9 +1,16 @@
+import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 import { GoArrowUpLeft } from "react-icons/go";
+import { SlideDown } from "../../Utils/framer";
 
 const Footer = () => {
     return (
-        <div className={styles.footerContainer}>
+        <motion.div
+            variants={SlideDown(0.3)}
+            initial="initial"
+            whileInView={"animate"}
+            viewport={{ once: false }}
+            className={styles.footerContainer}>
             <div className={styles.textContainer}>
                 <div className={styles.upperText}>
                     <p className={styles.Talk}>Let&apos;s talk</p>
@@ -28,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </motion.div >
     )
 }
 
