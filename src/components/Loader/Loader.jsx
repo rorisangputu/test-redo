@@ -16,7 +16,7 @@ const Loader = () => {
             tl
                 .add(animatePreload())
                 .add(animatePage(), "<")
-                .add(textChange().eventCallback("onComplete", () => setPageLoaded(true))) // Notify when textChange completes
+                .add(textChange()) // Notify when textChange completes
                 .add(revealText(), "<1.5");
 
             setPageLoaded(true);
@@ -28,13 +28,16 @@ const Loader = () => {
     return (
         <div className={styles.loader} ref={loaderRef}>
             <div data-preload-title className={styles.preload}>
-                <h1 data-text className={styles.text}>LOX</h1>
+                <p data-items>*</p>
+                <p data-items className={styles.subtext}>
+                    Currently Redefining the Future of Design
+                </p>
             </div>
             <div data-home-content className={styles.page}>
                 <Hero pageLoaded={pageLoaded} />
 
             </div>
-        </div>
+        </div >
     )
 }
 

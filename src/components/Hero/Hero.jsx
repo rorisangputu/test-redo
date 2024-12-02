@@ -6,7 +6,7 @@ import { GoArrowDownRight } from "react-icons/go";
 
 import Work from "../Work/Work";
 import Footer from "../Footer/Footer";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import img1 from '../../assets/ImageHover1.png'
 import img2 from '../../assets/ImageHover2.png'
 import img3 from '../../assets/ImageHover3.png'
@@ -21,6 +21,16 @@ import img10 from '../../assets/ImageHover10.png'
 
 const Hero = () => {
     const heroRef = useRef(null);
+    const [showImages, setShowImages] = useState(false);
+
+    useEffect(() => {
+        // Delay the visibility of hover images
+        const timer = setTimeout(() => {
+            setShowImages(true);
+        }, 8000); // Adjust the time based on your animation duration (in ms)
+
+        return () => clearTimeout(timer); // Clean up the timer
+    }, []);
 
     return (
         <div className={styles.wrapper}>
@@ -41,14 +51,16 @@ const Hero = () => {
                         </p>
                         <div className={styles.hoverDiv}>
                             <p data-title-second className={styles.heroBound}>INBOUND</p>
-                            <div className={styles.hoverImages}>
-                                {imageLinks.map((image, index) => (
-                                    <div key={index} className={`${styles.imageContainers} ${styles[image.style]}`}>
-                                        <img src={image.src} alt={`Image ${index + 1}`} />
-                                    </div>
+                            {showImages && ( // Conditionally render the hover images
+                                <div className={styles.hoverImages}>
+                                    {imageLinks.map((image, index) => (
+                                        <div key={index} className={`${styles.imageContainers} ${styles[image.style]}`}>
+                                            <img src={image.src} alt={`Image ${index + 1}`} />
+                                        </div>
 
-                                ))}
-                            </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
 
