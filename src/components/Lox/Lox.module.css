@@ -12,9 +12,9 @@
 
 .LoxText {
     width: 90%;
-    font-size: 6rem;
+    font-size: 5.7rem;
     padding: 1rem;
-    font-family: sans-serif;
+    font-family: 'ITC Avant Garde Gothic';
     font-weight: 300;
     overflow: hidden;
     color: white;
@@ -26,14 +26,14 @@
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 7.3rem;
 }
 
 .results {
     color: rgb(146, 167, 250);
     font-family: 'EB Garamond', serif;
     font-style: italic;
-    font-size: 6rem;
+    font-size: 7.3rem;
     font-weight: 500;
    
     
@@ -45,7 +45,7 @@
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 7.3rem;
 }
 
 .creativity {
@@ -53,7 +53,7 @@
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 7.3rem;
     }
 .icons {
     display: inline-flex;
