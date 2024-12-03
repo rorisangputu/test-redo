@@ -4,13 +4,14 @@
     display: flex;
     justify-content: center;
     height: 45vh;
+    font-family: 'ITC Avant Garde Gothic';
 }
 .textContainer{
     /* border: 1px solid yellow; */
     width: 90%;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    color: black;
+    color: #07140a;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,7 +44,10 @@
 .footerText{
     font-size: 25rem;
     margin-left: -2rem;
-    margin-bottom: -1rem;
+    margin-bottom: -4rem;
+    letter-spacing: 2rem;
+    font-family: 'Avant Garde Gothic';
+    /* border: solid red 2px; */
 }
 
 
@@ -61,10 +65,23 @@
     justify-content: space-between;
     align-items: end;
     gap: 1rem;
+    cursor: pointer;
+        /* Change cursor to pointer on hover */
+        transition: transform 0.3s ease;
+        /* Smooth transition for hover effect */
 }
 .topArrow{
     height: 3rem;
     width: 3rem;
+    color: #537435;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for backToTop */
+.backToTop:hover .topArrow {
+    transform: rotate(45deg);
+    /* Rotates the arrow to point upward */
+    color: rgb(250, 111, 30);
 }
 .copyright{
     display: flex;
