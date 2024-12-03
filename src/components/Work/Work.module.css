@@ -20,9 +20,10 @@
 }
 
 .workText {
-    font-family: sans-serif;
+    font-family: 'Avant Garde Gothic';
     margin: 0;
     /* Remove default margin */
+    font-weight: 900;
 
 }
 
