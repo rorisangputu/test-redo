@@ -16,7 +16,7 @@ export const animatePreload = () => {
       // duration: 20,
     },
     {
-      y: 50,
+      y:0,
       duration: 2,
     }
   );
@@ -53,6 +53,7 @@ export const animatePage = () => {
     },
     {
       y: 0,
+      duration: 2
     },
     "<"
   );
