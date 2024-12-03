@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #111d13;
+    background-color: #001300;
     opacity: 1;
 }
 .text {
@@ -24,13 +24,13 @@
     transform: scaleY(1);
     display: flex;
         font-size: 7rem;
-        color: rgb(146, 167, 250);
+        color: #AAC2F9;
         font-weight: 500;
         font-family: 'EB Garamond', serif;
 }
 .page {
     position: relative;
-    background-color: #0d1f11;
+    background-color: #001000;
     z-index: 10; /* Change this to 10 for it to be above the loader*/
     transform: scaleY(1);
     transform-origin: bottom center;
