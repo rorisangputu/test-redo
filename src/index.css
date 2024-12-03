@@ -6,6 +6,24 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Avant Garde Gothic';
+    src: url('../../assets/fonts/AvantGardeCE-Demi.woff2') format('woff2'),
+        url('../../assets/fonts/AvantGardeCE-Demi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Gothic';
+    src: url('../src/assets/fonts/AvantGardeCE-Book.woff2') format('woff2'),
+        url('../src/assets/fonts/AvantGardeCE-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     font-size: calc(100vw / 1728 * 10);
 }
