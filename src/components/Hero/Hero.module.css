@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #07140a;
+    background-color: #001000;
     /* border: 1px solid red; */
 }
 
@@ -42,6 +42,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    color: #FEF7F0;
 }
 
 .logo {
@@ -69,7 +70,7 @@
     
     position: relative;
     font-family: 'Avant Garde Gothic';
-    color: #f5f5f5;
+    color: #FEF7F0;
     flex-direction: row;
     /* border: 2px solid green; */
 }
@@ -312,7 +313,7 @@
 .subtitle {
     display: flex;
     font-size: 8rem;
-    color: rgb(146, 167, 250);
+    color: #AAC2F9;
     font-weight: 500;
     font-family: 'EB Garamond', serif;
     
@@ -346,7 +347,7 @@
 .scrollarrow {
     height: 3rem;
     width: 3rem;
-    color: #537435;
+    color: #636317;
     transition: transform 0.3s ease;
 }
 
@@ -357,5 +358,5 @@
 .scroll:hover .scrollarrow{
     transform: rotate(45deg);
     /* Rotates the arrow to point upward */
-    color: rgb(250, 111, 30);
+    color: #EF590E;
 }
