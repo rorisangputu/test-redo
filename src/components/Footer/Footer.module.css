@@ -27,7 +27,7 @@
 
 .contacts{
     display: flex;
-    gap: 60px;
+    gap: 10rem;
     font-size: 3rem;
     
 }
