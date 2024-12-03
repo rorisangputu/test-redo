@@ -31,7 +31,7 @@ export const animatePreload = () => {
     },
     {
       autoAlpha: 0,
-      duration: 0.5,
+      duration: 0.6,
     },
     "<"
   );
