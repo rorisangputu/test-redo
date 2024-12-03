@@ -24,6 +24,8 @@
     margin: 0;
     /* Remove default margin */
     font-weight: 900;
+    /* border: 2px solid red; */
+    line-height: 15rem;
 
 }
 
