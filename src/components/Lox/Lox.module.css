@@ -22,7 +22,7 @@
 }
 
 .setTrend {
-    color: rgb(250, 111, 30);
+    color: #EF590E;
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 500;
@@ -30,7 +30,7 @@
 }
 
 .results {
-    color: rgb(146, 167, 250);
+    color: #AAC2F9;
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-size: 7.3rem;
